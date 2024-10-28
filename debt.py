@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def rosdolgi(inn_search):
     params = {'inn':f'{inn_search}'}
-    print('Идет поиск по rosdolgi.ru ...')
+    print('Идет поиск по rosdolgi.ru ...\n')
     query = requests.get('https://rosdolgi.ru/nalogi', params=params)
     if query.status_code == 200:
         try:
@@ -14,5 +14,4 @@ def rosdolgi(inn_search):
     else:print(f'Доступ запрещен: {query.status_code}')
 
     
-
-rosdolgi(540541217232)
+rosdolgi(int(input("Введи ИНН: ")))
